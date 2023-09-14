@@ -1,0 +1,20 @@
+<div class="container-login">
+    <div class="login">
+        <img src="./assets/images/logo.png" alt="Logo" width="150">
+        <h1>Ingreso</h1>
+        <form name="" #f="ngForm" (ngSubmit)="login(f)">
+            <div class="mb-3">
+                <input type="text" name="username" ngModel #username="ngModel" class="form-control" placeholder="Ingrese usuario" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" name="password" ngModel #password="ngModel" class="form-control" placeholder="Ingrese contraseña" autocomplete="off" required>
+            </div>
+            <!-- <div class="form-control form-checkbox">
+                <input type="checkbox" value="" id="remember">
+                <label for="remember">Recordarme</label>
+            </div> -->
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <!-- <a href=""><small>Olvide mi contraseña</small></a> -->
+        </form>
+    </div>
+</div>

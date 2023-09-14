@@ -1,0 +1,15 @@
+<!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" >Cargando...</p></ngx-spinner> -->
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div class="header">
+    <img src="./assets/images/logo.png" alt="Logo" width="100">
+        <ul>
+            <li><a routerLink="/home" routerLinkActive="active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+            <li><a routerLink="/demo" routerLinkActive="active"><i class="fa-solid fa-person-walking-arrow-right"></i> <span>Demo</span></a></li>
+        </ul>
+    <button type="button" class="button" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Salir</span></button>
+</div>
+<main>
+    <ng-content></ng-content>
+</main>
+

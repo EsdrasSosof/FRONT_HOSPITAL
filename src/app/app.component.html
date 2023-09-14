@@ -1,0 +1,8 @@
+<app-dashboard *ngIf="session">
+    <router-outlet></router-outlet>
+</app-dashboard>
+<router-outlet *ngIf="!session"></router-outlet>
+<!-- <app-dashboard>
+    <router-outlet></router-outlet>
+</app-dashboard>
+<router-outlet></router-outlet> -->

@@ -1,0 +1,88 @@
+.container-login {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url('/assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .login {
+        padding: 2rem 4rem;
+        background: #ffffff95;
+        border-radius: 0.5rem;
+        border: 1px solid #d3d3d3;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+        text-align: center;
+        width: 450px;
+        img{
+            display: block;
+            margin: 0 auto 1rem;
+        }
+        h1 {
+            color: #585858;
+            font-size: 1.75rem;
+        }
+        a {
+            color: #585858;
+        }
+    }
+    .form-control {
+        margin-bottom: 1rem;
+        &.form-checkbox{
+            display: flex;
+            flex-direction: row;
+            gap: 0 0.5em;
+            align-items: center;
+            label{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .form-control-input {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #414141;
+        border: 1px solid #d3d3d3;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        input:focus-visible {
+            outline: 0;
+        }
+    }
+    button{
+        font-weight: bold;
+        width: 100%;
+        border: 0;
+        background-color: #2471A3;
+        padding: 0.5rem 0.75rem;
+        color: #FFF;
+        cursor: pointer;
+        transition: background-color 250ms linear;
+        &:hover{
+            background-color: #85C1E9 ;
+        }
+        &:focus,
+        &:focus-visible{
+            outline: 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container{
+        padding: 0 1rem;
+        .login{
+            width: auto;
+        }
+    }
+}
