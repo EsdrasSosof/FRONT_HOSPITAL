@@ -4,10 +4,12 @@
         <h1>Ingreso</h1>
         <form name="" #f="ngForm" (ngSubmit)="login(f)">
             <div class="mb-3">
-                <input type="text" name="username" ngModel #username="ngModel" class="form-control" placeholder="Ingrese usuario" autocomplete="off" required>
+                <input type="text" name="username" ngModel #username="ngModel" class="form-control"
+                placeholder="Ingrese usuario" autocomplete="off" required>
             </div>
             <div class="mb-3">
-                <input type="password" name="password" ngModel #password="ngModel" class="form-control" placeholder="Ingrese contraseña" autocomplete="off" required>
+                <input type="password" name="password" ngModel #password="ngModel" class="form-control"
+                placeholder="Ingrese contraseña" autocomplete="off" required>
             </div>
             <!-- <div class="form-control form-checkbox">
                 <input type="checkbox" value="" id="remember">

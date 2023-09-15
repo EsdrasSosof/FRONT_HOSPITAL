@@ -1,0 +1,43 @@
+<app-dashboard></app-dashboard>
+<!-- <p>medicos works!</p> -->
+<div class="botones-tabla">
+    <button (click)="openModal()">Agregar un Médico</button>
+</div>
+<div class="table-container">
+<table class="table">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>NÚMERO COLEGIADO</th>
+        <th>NÚMERO IDENTIFICACIÓN</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>FECHA NACIMIENTO</th>
+        <th>DIRECCIÓN</th>
+        <th>TELÉFONO</th>
+        <th>EMAIL</th>
+        <th>ESPECIALIZACIÓN</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let medico of medicos">
+            <td></td>
+            <td>{{ medico.member_number }}</td>
+            <td>{{ medico.identification }}</td>
+            <td>{{ medico.name }}</td>
+            <td>{{ medico.lastame }}</td>
+            <td>{{ medico.dof }}</td>
+            <td>{{ medico.address }}</td>
+            <td>{{ medico.phone }}</td>
+            <td>{{ medico.email }}</td>
+            <td>{{ medico.specialization_id.description }}</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+<app-modal></app-modal>
+<div>
+  <app-modal *ngIf="modalSwitch"></app-modal>
+</div>
