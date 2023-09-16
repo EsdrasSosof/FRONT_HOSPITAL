@@ -14,14 +14,14 @@ import { RolesComponent } from './pages/roles/roles.component';
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
-	{ path: 'home', component: SummaryComponent, canActivate: [LoginGuardService] },
+	// { path: 'home', component: SummaryComponent, canActivate: [LoginGuardService] },
 	{ path: 'medicos', component: MedicosComponent },
 	{ path: 'especializaciones', component: EspecializacionesComponent },
 	{ path: 'pacientes', component: PacientesComponent},
 	{ path: 'medicinas', component: MedicinasComponent},
 	{ path: 'usuarios', component: UsuariosComponent},
 	{ path: 'roles', component: RolesComponent},
-	// { path: 'home', component: SummaryComponent, canActivate: [AuthGuardService] },
+	{ path: 'home', component: SummaryComponent, canActivate: [AuthGuardService] },
 	//{ path: 'home', component: SummaryComponent },
 ];
 

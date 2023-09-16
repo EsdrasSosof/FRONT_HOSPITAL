@@ -51,26 +51,48 @@ export class AuthService {
     localStorage.removeItem('user');
   }
 
+  // async getUserInfo(username: string, password: string): Promise<boolean> {
+  //   try {
+  //   const response = await this.api.post('/api/auth/login', { username, password });
+
+  //     if (response && response.token !== undefined) {
+  //       const userDetails = response.user[0];
+  //       const token = response.token;
+  //       console.log("el token es",token)
+
+  //       this.setSession(userDetails, token);
+
+  //       return true;
+  //     }
+      
+  //     return false;
+  //     return true;
+  //   } catch (error) {
+  //     return false;
+  //   }
+  // }
+
+  // ---- ya trae el token en consola
   async getUserInfo(username: string, password: string): Promise<boolean> {
     try {
-    const response = await this.api.post('/api/auth/login', { username, password });
-
+      const response = await this.api.post('/api/auth/login', { username, password });
+  
       if (response && response.token !== undefined) {
-        const userDetails = response.user[0];
+        const userDetails = response.user;
         const token = response.token;
-        console.log("el token es",token)
-
+        console.log("El token es", token);
+  
         this.setSession(userDetails, token);
-
+  
         return true;
       }
-      
+  
       return false;
-      return true;
     } catch (error) {
       return false;
     }
   }
+  
 }
 //------segunda prueba no captura token ----
 // import { Injectable } from '@angular/core';

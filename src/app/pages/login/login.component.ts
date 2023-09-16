@@ -31,23 +31,45 @@ export class LoginComponent {
     }
   }
 
-  private async validate(username: string, password: string): Promise<void> {
-    try {
-      await this.spinner.show()
-      const userExist = await this.auth.getUserInfo(username, password);
+// // funciona el logueo pero no hace redirección
+//   private async validate(username: string, password: string): Promise<void> {
+//     try {
+//       await this.spinner.show()
+//       const userExist = await this.auth.getUserInfo(username, password);
 
-      if (userExist) {
-        this.event.publish('session:auth', { auth: '/api/auth/login' });
-        this.router.navigate(['home']);
-      } else {
-        alert('Usuario no existe');
-      }
-      await this.spinner.hide()
-      return;
-    } catch (error) {
-      throw error;      
+//       if (userExist) {
+//         //-- sin eso se traba y no loguea
+//         this.event.publish('session:auth', { auth: '/api/auth/login' });
+//         this.router.navigate(['home']);
+//       } else {
+//         alert('Usuario no existe');
+//       }
+//       await this.spinner.hide()
+//       return;
+//     } catch (error) {
+//       throw error;
+//     }
+//   }
+
+private async validate(username: string, password: string): Promise<void> {
+  try {
+    await this.spinner.show();
+
+    const userExist = await this.auth.getUserInfo(username, password);
+
+    if (userExist) {
+      this.event.publish('session:auth', { auth: '/api/auth/login' });
+      this.router.navigate(['home']);
+    } else {
+      alert('Usuario no existe');
     }
+  } catch (error) {
+    console.error('Error en la autenticación:', error);
+  } finally {
+    await this.spinner.hide();
   }
+}
+
 }
 //--- prueba con token en response ---
 // import { Component } from '@angular/core';
