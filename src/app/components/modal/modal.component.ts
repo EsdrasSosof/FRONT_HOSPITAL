@@ -1,21 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SwitchService } from 'src/app/services/switch/switch.service';
+import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit{
+export class ModalComponent{
+  constructor(public activeModal: NgbModal, config: NgbModalConfig){
+    config.backdrop = 'static';
+		config.keyboard = false;
 
-  constructor (private modalSS: SwitchService) {}
+  }
 
-  @Input() title?: string = 'Reporte';
-  // @Output() close: EventEmitter<boolean> = new EventEmitter();
-  ngOnInit(): void {
-    
-  }
-  closeModal(){   
-    this.modalSS.$modal.emit(false)
-  }
+  @Input() title?: string = 'CREAR ESPECIALIZACIÓN';
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 }

@@ -10,19 +10,21 @@ import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { MedicinasComponent } from './pages/medicinas/medicinas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { RolesComponent } from './pages/roles/roles.component';
+import { PersonalCreateComponent } from './pages/medicos/personal-create/personal-create.component';
+import { EspecCreateComponent } from './pages/especializaciones/espec-create/espec-create.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
 	{ path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
-	// { path: 'home', component: SummaryComponent, canActivate: [LoginGuardService] },
-	{ path: 'medicos', component: MedicosComponent },
-	{ path: 'especializaciones', component: EspecializacionesComponent },
-	{ path: 'pacientes', component: PacientesComponent},
-	{ path: 'medicinas', component: MedicinasComponent},
-	{ path: 'usuarios', component: UsuariosComponent},
-	{ path: 'roles', component: RolesComponent},
 	{ path: 'home', component: SummaryComponent, canActivate: [AuthGuardService] },
-	//{ path: 'home', component: SummaryComponent },
+	{ path: 'medicos', component: MedicosComponent, canActivate: [AuthGuardService] },
+	{ path: 'medicos/personal-create', component: PersonalCreateComponent, canActivate: [AuthGuardService] },
+	{ path: 'especializaciones', component: EspecializacionesComponent, canActivate: [AuthGuardService] },
+	{ path: 'especializaciones/espec-create', component: EspecCreateComponent, canActivate: [AuthGuardService] },
+	{ path: 'pacientes', component: PacientesComponent, canActivate: [AuthGuardService]},
+	{ path: 'medicinas', component: MedicinasComponent, canActivate: [AuthGuardService]},
+	{ path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuardService]},
+	{ path: 'roles', component: RolesComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({

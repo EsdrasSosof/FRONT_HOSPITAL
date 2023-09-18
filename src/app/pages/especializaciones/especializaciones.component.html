@@ -1,8 +1,9 @@
 <!-- <p>especializaciones works!</p> -->
-<div class="botones-tabla">
-    <button type="button">Agregar una Especialización</button>
-</div>
-<div class="table-container">
+<div  class="table-container">
+  <div class="botones-tabla">
+      <button [routerLink]="['/especializaciones/espec-create']" class="btn btn-primary">Agregar una Especialización</button>
+  </div>
+  <div class="table-responsive">
 <table class="table">
     <thead>
       <tr>
@@ -12,11 +13,15 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let espec of especializaciones">
-            <td>{{getCorrelativo()}}</td>
+        <tr *ngFor="let espec of especializaciones, let i = index">
+            <td>{{i+1}}</td>
             <td>{{ espec.description }}</td>
-            <td></td>
+            <td>
+              <button class="btn btn-primary">Editar</button>
+              <button class="btn btn-primary">Ver</button>
+            </td>
           </tr>
     </tbody>
   </table>
+</div>
 </div>

@@ -1,18 +1,17 @@
 <!-- <p>medicos works!</p> -->
+<div  class="table-container">
 <div class="botones-tabla">
-    <button (click)="openModal()">Agregar un Médico</button>
+    <button [routerLink]="['/medicos/personal-create']" class="btn btn-primary">Agregar un Médico</button>
 </div>
-<div class="table-container">
+<div class="table-responsive">
 <table class="table">
     <thead>
       <tr>
         <th>No.</th>
         <th>NÚMERO COLEGIADO</th>
-        <th>NÚMERO IDENTIFICACIÓN</th>
+        <th>NO. IDENTIFICACIÓN</th>
         <th>NOMBRE</th>
         <th>APELLIDO</th>
-        <th>FECHA NACIMIENTO</th>
-        <th>DIRECCIÓN</th>
         <th>TELÉFONO</th>
         <th>EMAIL</th>
         <th>ESPECIALIZACIÓN</th>
@@ -20,23 +19,21 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let medico of medicos">
-            <td></td>
+        <tr *ngFor="let medico of medicos, let i = index">
+            <td>{{i + 1}}</td>
             <td>{{ medico.member_number }}</td>
             <td>{{ medico.identification }}</td>
             <td>{{ medico.name }}</td>
             <td>{{ medico.lastame }}</td>
-            <td>{{ medico.dof }}</td>
-            <td>{{ medico.address }}</td>
             <td>{{ medico.phone }}</td>
             <td>{{ medico.email }}</td>
             <td>{{ medico.specialization_id.description }}</td>
-            <td></td>
+            <td>
+              <button class="btn btn-primary">Editar</button>
+              <button class="btn btn-primary">Ver</button>
+            </td>
           </tr>
     </tbody>
   </table>
 </div>
-<app-modal></app-modal>
-<div>
-  <app-modal *ngIf="modalSwitch"></app-modal>
 </div>

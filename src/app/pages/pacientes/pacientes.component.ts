@@ -8,7 +8,6 @@ import { PacientesService } from 'src/app/services/pacientes/pacientes.service';
 })
 export class PacientesComponent {
   pacientes: any[] = [];
-  correlativo: number = 0;
 
   constructor(private pacientesService: PacientesService) { }
 
@@ -16,8 +15,5 @@ export class PacientesComponent {
     this.pacientesService.getPacientes().subscribe(data => {
       this.pacientes = data;
     });
-  }
-  getCorrelativo(): number {
-    return this.correlativo++;
   }
 }
