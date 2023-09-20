@@ -1,12 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class MedicosService {
-
-//   constructor() { }
-// }
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,30 +15,6 @@ export class MedicosService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  // async getAll(): Promise<void> {
-  //   try {
-  //     const token = 'TOKEN_API';
-  //     const records = await this.api.get('/medicos', { headers: { Authorization: `Bearer ${token}` } });
-      
-  //     console.log('records: ', records);
-
-  //     return;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
-
-  // async createPerson(personId: number | undefined, params: any) {
-  //   try {
-  //     const token = localStorage.getItem('token');
-  //     const person = await this.api.post('/doctors' + personId, params, {  headers: { Authorization: `Bearer ${token}` }})
-      
-  //     return person;
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
-
   createDoctor(data: any): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -57,4 +24,25 @@ export class MedicosService {
     // Realiza la solicitud POST enviando los datos y encabezados
     return this.http.post(this.apiUrl, data, { headers });
   }
+
+  // updateMedico(personId: number | undefined, params: any): Observable<any> {
+  updateMedico(id: number, data: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    // return this.http.patch<any>(`${this.apiUrl}/${personId}`, params, { headers });
+    return this.http.patch(`${this.apiUrl}/${id}`, data, { headers });
+  }
+
+  getMedicoById(id: number): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+  }
+
 }

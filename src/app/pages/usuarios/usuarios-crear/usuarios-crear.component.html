@@ -1,0 +1,22 @@
+<!-- <p>usuarios-crear works!</p> -->
+<app-modal>
+    <h2>{{title}}</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-6">
+            <label class="form-label" for="name">USUARIO</label>
+            <input [(ngModel)]="formData.username" required class="form-control" type="text" id="name" name="name"
+            placeholder="Ingrese un usuario formato de correo">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="password">CONTRASEÑA</label>
+            <input [(ngModel)]="formData.password" required class="form-control" type="password" id="password" name="password"
+            placeholder="Ingrese una contraseña">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/usuarios']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">CREAR USUARIO</button>
+        </div>
+    </form>
+</app-modal>

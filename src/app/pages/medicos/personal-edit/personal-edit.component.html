@@ -1,0 +1,53 @@
+<!-- <p>personal-edit works!</p> -->
+<app-modal>
+    <h2>Actualizar Perfil de Personal</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-6">
+            <label class="form-label" for="colegiado">NÚMERO DE COLEGIADO</label>
+            <input readonly [(ngModel)]="formData.member_number" required class="form-control" type="text" id="colegiado" name="colegiado" placeholder="Ingrese el número de Colegiado">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="identificacion">NÚMERO DE IDENTIFICACIÓN</label>
+            <input readonly [(ngModel)]="formData.identification" required class="form-control" type="text" id="identificacion" name="Identificacion" placeholder="Ingrese el número de Identificación">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="nombre">NOMBRES</label>
+            <input [(ngModel)]="formData.name" required class="form-control" type="text" id="nombre" name="nombres" placeholder="Ingrese los nombres">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="apellido">APELIDOS</label>
+            <input [(ngModel)]="formData.lastame" class="form-control" type="text" id="apellido" name="apellido" placeholder="Ingrese los apellidos">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="nacimiento">FECHA DE NACIMIENTO</label>
+            <input [(ngModel)]="formData.dof" required class="form-control" type="text" id="nacimiento" name="nacimiento" placeholder="El formato es AAAA-MM-DD">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="residencia">DIRECCIÓN DE RESIDENCIA</label>
+            <input [(ngModel)]="formData.address" required class="form-control" type="text" id="residencia" name="residencia" placeholder="Ingrese la dirección de residencia">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="telefono">NÚMERO DE TELÉFONO</label>
+            <input [(ngModel)]="formData.phone" required class="form-control" type="text" id="telefono" name="telefono" placeholder="Ingrese el número de teléfono personal">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="correo">DIRECCIÓN DE CORREO ELECTRÓNICO</label>
+            <input [(ngModel)]="formData.email" required class="form-control" type="text" id="correo" name="correo" placeholder="Ingrese el correo electrónico personal">
+        </div>
+        <!-- <div class="col-md-6">
+            <label class="form-label" for="especia">ESPECIALIZACIÓN</label>
+            <input class="form-control" type="text" id="especia" name="especi" placeholder="Ingrese una especialización">
+            <select class="form-select">
+                <option disabled selected>Seleccione una especialización</option>
+                <option></option>
+                <option></option>
+            </select>
+        </div> -->
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/medicos']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">ACTUALIZAR PERFIL</button>
+        </div>
+    </form>
+</app-modal>

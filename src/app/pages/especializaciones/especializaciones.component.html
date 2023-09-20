@@ -15,9 +15,10 @@
     <tbody>
         <tr *ngFor="let espec of especializaciones, let i = index">
             <td>{{i+1}}</td>
+            <!-- <td>{{espec.specialization_id}}</td> -->
             <td>{{ espec.description }}</td>
             <td>
-              <button class="btn btn-primary">Editar</button>
+              <button class="btn btn-primary" (click)="onEditEspec(espec.specialization_id)">Editar</button>
               <button class="btn btn-primary">Ver</button>
             </td>
           </tr>

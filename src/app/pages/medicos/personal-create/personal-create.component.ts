@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';;
 import { MedicosService } from 'src/app/services/medicos/medicos.service';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -34,22 +33,13 @@ export class PersonalCreateComponent {
     this.formData.address = this.formData.address.toString();
     this.formData.phone = this.formData.phone.toString();
     this.formData.email = this.formData.email.toString();
-    // Convierte los valores del formulario a cadenas (strings)
-    // const formDataString = {};
-    // for (const key in this.formData) {
-    //   if (Object.prototype.hasOwnProperty.call(this.formData, key)) {
-    //     formDataString[key] = this.formData[key].toString();
-    //   }
-    // }
 
     // Llama al servicio para crear un nuevo médico
     this.medicosService.createDoctor(this.formData).subscribe(
       (response) => {
         console.log('Médico creado exitosamente:', response);
         this.resetForm();
-      // Muestra un mensaje de éxito
         alert('El médico se creó exitosamente');
-      // Redirige a otra página
         this.router.navigate(['/medicos']);
       },
       (error) => {

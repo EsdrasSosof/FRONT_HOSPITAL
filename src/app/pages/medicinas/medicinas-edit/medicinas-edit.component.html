@@ -1,0 +1,24 @@
+<!-- <p>medicinas-edit works!</p> -->
+<app-modal>
+    <h2>{{title}}</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-6">
+            <label class="form-label" for="commercial_name">NOMBRE COMERCIAL</label>
+            <input [(ngModel)]="formData.commercial_name" required class="form-control" type="text" id="commercial_name" name="commercial_name" placeholder="Ingrese el nombre comercial">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="scientific_name">NOMBRE CIENTÍFICO</label>
+            <input [(ngModel)]="formData.scientific_name" required class="form-control" type="text" id="scientific_name" name="scientific_name" placeholder="Ingrese el nombre científico">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="description">DESCRIPCIÓN</label>
+            <input [(ngModel)]="formData.description" required class="form-control" type="text" id="description" name="description" placeholder="Ingrese una recomendación de dosis">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/medicinas']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">CREAR MEDICINA</button>
+        </div>
+    </form>
+</app-modal>

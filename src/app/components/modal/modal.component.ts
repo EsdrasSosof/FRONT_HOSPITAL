@@ -7,12 +7,11 @@ import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-boots
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent{
-  constructor(public activeModal: NgbModal, config: NgbModalConfig){
-    config.backdrop = 'static';
-		config.keyboard = false;
+  // constructor(public activeModal: NgbModal, config: NgbModalConfig){
+  //   config.backdrop = 'static';
+	// 	config.keyboard = false;
+  // }
 
-  }
-
-  @Input() title?: string = 'CREAR ESPECIALIZACIÓN';
-  @Output() close: EventEmitter<boolean> = new EventEmitter();
+  // @Input() title?: string = 'CREAR ESPECIALIZACIÓN';
+  // @Output() close: EventEmitter<boolean> = new EventEmitter();
 }

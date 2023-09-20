@@ -1,0 +1,22 @@
+<!-- <p>espec-edit works!</p> -->
+<app-modal>
+    <h2>{{title}}</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-6">
+            <label class="form-label" for="name">NOMBRE DE LA ESPECIALIZACIÓN</label>
+            <input [(ngModel)]="formData.name" required class="form-control" type="text" id="name" name="name"
+            placeholder="Ingrese el nombre de la especialización">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="description">DESCRIPCIÓN DE LA ESPECIALIZACIÓN</label>
+            <input [(ngModel)]="formData.description" required class="form-control" type="text" id="description"
+            name="description" placeholder="Ingrese alguna descripción de la especialización">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/especializaciones']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">CREAR ESPECIALIZACIÓN</button>
+        </div>
+    </form>
+</app-modal>

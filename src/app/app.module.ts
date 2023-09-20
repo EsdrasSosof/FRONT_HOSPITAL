@@ -22,7 +22,16 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { RolesComponent } from './pages/roles/roles.component';
 import { PersonalCreateComponent } from './pages/medicos/personal-create/personal-create.component';
 import { EspecCreateComponent } from './pages/especializaciones/espec-create/espec-create.component';
-// import { AuthInterceptor } from './auth/auth.interceptor';
+import { PersonalEditComponent } from './pages/medicos/personal-edit/personal-edit.component';
+import { PacientesCrearComponent } from './pages/pacientes/pacientes-crear/pacientes-crear.component';
+import { MedicinasCrearComponent } from './pages/medicinas/medicinas-crear/medicinas-crear.component';
+import { PacientesEditComponent } from './pages/pacientes/pacientes-edit/pacientes-edit.component';
+import { EspecEditComponent } from './pages/especializaciones/espec-edit/espec-edit.component';
+import { MedicinasEditComponent } from './pages/medicinas/medicinas-edit/medicinas-edit.component';
+import { RolesEditComponent } from './pages/roles/roles-edit/roles-edit.component';
+import { RolesCrearComponent } from './pages/roles/roles-crear/roles-crear.component';
+import { UsuariosCrearComponent } from './pages/usuarios/usuarios-crear/usuarios-crear.component';
+import { UsuariosDitComponent } from './pages/usuarios/usuarios-dit/usuarios-dit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +49,17 @@ import { EspecCreateComponent } from './pages/especializaciones/espec-create/esp
     UsuariosComponent,
     RolesComponent,
     PersonalCreateComponent,
-    EspecCreateComponent
+    EspecCreateComponent,
+    PersonalEditComponent,
+    PacientesCrearComponent,
+    MedicinasCrearComponent,
+    PacientesEditComponent,
+    EspecEditComponent,
+    MedicinasEditComponent,
+    RolesEditComponent,
+    RolesCrearComponent,
+    UsuariosCrearComponent,
+    UsuariosDitComponent
   ],
   imports: [
     BrowserModule,
@@ -54,12 +73,7 @@ import { EspecCreateComponent } from './pages/especializaciones/espec-create/esp
     NgbModule,
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true,
-    // },
-    NgbActiveModal,NgbModalConfig, NgbModal
+    NgbActiveModal,NgbModalConfig,NgbModal
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

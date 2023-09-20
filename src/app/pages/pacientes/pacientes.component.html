@@ -1,7 +1,7 @@
 <!-- <p>pacientes works!</p> -->
 <div  class="table-container">
   <div class="botones-tabla">
-      <button [routerLink]="['/medicos/personal-create']" class="btn btn-primary">Agregar un Paciente</button>
+      <button [routerLink]="['/pacientes/pacientes-crear']" class="btn btn-primary">Agregar un Paciente</button>
   </div>
 <div class="table-responsive">
 <table class="table">
@@ -23,6 +23,7 @@
     <tbody>
         <tr *ngFor="let paciente of pacientes, let i = index">
             <td>{{i+1}}</td>
+            <!-- <td>{{ paciente.patient_id }}</td> -->
             <td>{{ paciente.identification }}</td>
             <td>{{ paciente.first_name }}</td>
             <td>{{ paciente.second_name }}</td>
@@ -33,7 +34,7 @@
             <td>{{ paciente.phone }}</td>
             <td>{{ paciente.email }}</td>
             <td>
-              <button class="btn btn-primary">Editar</button>
+              <button class="btn btn-primary" (click)="onEditMedico(paciente.patient_id)">Editar</button>
               <button class="btn btn-primary">Ver</button>
             </td>
           </tr>

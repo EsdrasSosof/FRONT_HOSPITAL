@@ -26,13 +26,17 @@ button{
   }
 }
   
+.table-responsive{
+  display:flex;
+  justify-content: center;
+}
 
 .table-container {
     margin: 25px 50px 25px 50px;
   }
   
   .table {
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
   }
   

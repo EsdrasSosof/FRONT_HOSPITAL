@@ -1,0 +1,48 @@
+<!-- <p>pacientes-crear works!</p> -->
+<app-modal>
+    <h2>CREAR PACIENTE</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-6">
+            <label class="form-label" for="identificacion">NÚMERO DE IDENTIFICACIÓN</label>
+            <input [(ngModel)]="formData.identification" required class="form-control" type="text" id="identificacion" name="Identificacion" placeholder="Ingrese el número de Identificación">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="first_name">PRIMER NOMBRE</label>
+            <input [(ngModel)]="formData.first_name" required class="form-control" type="text" id="first_name" name="first_name" placeholder="Ingrese el primer nombre">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="second_name">SEGUNDO NOMBRE</label>
+            <input [(ngModel)]="formData.second_name" required class="form-control" type="text" id="second_name" name="second_name" placeholder="Ingrese el segundo nombre">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="lastame">PRIMER APELLIDO</label>
+            <input [(ngModel)]="formData.lastame" class="form-control" type="text" id="lastame" name="lastame" placeholder="Ingrese el primer apellido">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="second_lastame">SEGUNDO APELLIDO</label>
+            <input [(ngModel)]="formData.second_lastame" class="form-control" type="text" id="second_lastame" name="second_lastame" placeholder="Ingrese el segundo apellido">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="nacimiento">FECHA DE NACIMIENTO</label>
+            <input [(ngModel)]="formData.dof" required class="form-control" type="text" id="nacimiento" name="nacimiento" placeholder="El formato es AAAA-MM-DD">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="residencia">DIRECCIÓN DE RESIDENCIA</label>
+            <input [(ngModel)]="formData.address" required class="form-control" type="text" id="residencia" name="residencia" placeholder="Ingrese la dirección de residencia">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="telefono">NÚMERO DE TELÉFONO</label>
+            <input [(ngModel)]="formData.phone" required class="form-control" type="text" id="telefono" name="telefono" placeholder="Ingrese el número de teléfono personal">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="correo">DIRECCIÓN DE CORREO ELECTRÓNICO</label>
+            <input [(ngModel)]="formData.email" required class="form-control" type="text" id="correo" name="correo" placeholder="Ingrese el correo electrónico personal">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/pacientes']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">CREAR PACIENTE</button>
+        </div>
+    </form>
+</app-modal>
