@@ -32,6 +32,11 @@ import { RolesEditComponent } from './pages/roles/roles-edit/roles-edit.componen
 import { RolesCrearComponent } from './pages/roles/roles-crear/roles-crear.component';
 import { UsuariosCrearComponent } from './pages/usuarios/usuarios-crear/usuarios-crear.component';
 import { UsuariosDitComponent } from './pages/usuarios/usuarios-dit/usuarios-dit.component';
+import { HistorialmedComponent } from './pages/historialmed/historialmed.component';
+import { MotivosComponent } from './pages/motivos/motivos.component';
+import { MotivosCrearComponent } from './pages/motivos/motivos-crear/motivos-crear.component';
+import { MotivosEditComponent } from './pages/motivos/motivos-edit/motivos-edit.component';
+import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +64,12 @@ import { UsuariosDitComponent } from './pages/usuarios/usuarios-dit/usuarios-dit
     RolesEditComponent,
     RolesCrearComponent,
     UsuariosCrearComponent,
-    UsuariosDitComponent
+    UsuariosDitComponent,
+    HistorialmedComponent,
+    MotivosComponent,
+    MotivosCrearComponent,
+    MotivosEditComponent,
+    ConsultasComponent
   ],
   imports: [
     BrowserModule,

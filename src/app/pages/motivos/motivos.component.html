@@ -1,0 +1,28 @@
+<!-- <p>motivos works!</p> -->
+<div  class="table-container">
+    <div class="botones-tabla">
+      <app-button></app-button>
+      <button [routerLink]="['/motivos/motivos-crear']" class="btn btn-primary">Agregar un Motivo</button>
+    </div>
+    <div class="table-responsive">
+  <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>NOMBRE</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let motive of motivos, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ motive.name }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="onEditEspec(motive.motive_id)">Editar</button>
+                <button class="btn btn-primary">Ver</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

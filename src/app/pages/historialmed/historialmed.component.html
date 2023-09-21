@@ -1,0 +1,29 @@
+<!-- <p>historialmed works!</p> -->
+<div  class="table-container">
+    <div class="botones-tabla">
+        <!-- <button [routerLink]="['/home']" class="btn btn-primary">Regresar</button> -->
+        <app-button></app-button>
+    </div>
+    <div class="table-responsive">
+  <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>PRIMER NOMBRE</th>
+          <th>PRIMER APELLIDO</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let historial of history, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ historial.patient_id.first_name }}</td>
+              <td>{{ historial.patient_id.lastame }}</td>
+              <td>
+                <button class="btn btn-primary">Ver</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

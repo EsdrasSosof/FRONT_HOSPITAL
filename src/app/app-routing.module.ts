@@ -22,6 +22,11 @@ import { RolesCrearComponent } from './pages/roles/roles-crear/roles-crear.compo
 import { RolesEditComponent } from './pages/roles/roles-edit/roles-edit.component';
 import { UsuariosCrearComponent } from './pages/usuarios/usuarios-crear/usuarios-crear.component';
 import { UsuariosDitComponent } from './pages/usuarios/usuarios-dit/usuarios-dit.component';
+import { HistorialmedComponent } from './pages/historialmed/historialmed.component';
+import { MotivosComponent } from './pages/motivos/motivos.component';
+import { MotivosCrearComponent } from './pages/motivos/motivos-crear/motivos-crear.component';
+import { MotivosEditComponent } from './pages/motivos/motivos-edit/motivos-edit.component';
+import { ConsultasComponent } from './pages/consultas/consultas.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -45,6 +50,11 @@ const routes: Routes = [
 	{ path: 'roles', component: RolesComponent, canActivate: [AuthGuardService]},
 	{ path: 'roles/roles-crear', component: RolesCrearComponent, canActivate: [AuthGuardService]},
 	{ path: 'roles/roles-edit/:id', component: RolesEditComponent, canActivate: [AuthGuardService]},
+	{ path: 'historiales', component: HistorialmedComponent, canActivate: [AuthGuardService]},
+	{ path: 'motivos', component: MotivosComponent, canActivate: [AuthGuardService]},
+	{ path: 'motivos/motivos-crear', component: MotivosCrearComponent, canActivate: [AuthGuardService]},
+	{ path: 'motivos/motivos-edit/:id', component: MotivosEditComponent, canActivate: [AuthGuardService]},
+	{ path: 'consultas', component: ConsultasComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({

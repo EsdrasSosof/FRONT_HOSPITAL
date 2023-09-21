@@ -1,0 +1,61 @@
+.botones-tabla{
+    display: flex;
+    justify-content:flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+button{
+  min-width: 5rem;
+  text-align:center;
+  margin: 0.3em;
+  border: 0;
+  background-color: #2471A3;
+  padding: 0.5rem 0.75rem;
+  color: #FFF;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+  &:hover{
+      background-color: #85C1E9 ;
+  }
+  &:focus,
+  &:focus-visible{
+      outline: 0;
+  }
+}
+
+.table-responsive{
+    display:flex;
+    justify-content: center;
+  }
+
+.table-container {
+    margin: 25px 50px 25px 50px;
+}
+  
+.table {
+width: 65%;
+border-collapse: collapse;
+}
+
+th, td {
+padding: 10px;
+text-align: left;
+}
+
+thead {
+background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+background-color: #e0e0e0;
+}
+
+/* Ajusta el ancho de las columnas automáticamente al contenido */
+th {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}

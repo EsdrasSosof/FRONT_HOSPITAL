@@ -1,29 +1,30 @@
 <!-- <p>especializaciones works!</p> -->
 <div  class="table-container">
-  <div class="botones-tabla">
+    <div class="botones-tabla">
+      <app-button></app-button>
       <button [routerLink]="['/especializaciones/espec-create']" class="btn btn-primary">Agregar una Especialización</button>
-  </div>
+    </div>
   <div class="table-responsive">
-<table class="table">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>NOMBRE</th>
-        <th>DESCRIPCIÓN</th>
-        <th>ACCIONES</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let espec of especializaciones, let i = index">
-            <td>{{i+1}}</td>
-            <td>{{ espec.name }}</td>
-            <td>{{ espec.description }}</td>
-            <td>
-              <button class="btn btn-primary" (click)="onEditEspec(espec.specialization_id)">Editar</button>
-              <button class="btn btn-primary">Ver</button>
-            </td>
-          </tr>
-    </tbody>
-  </table>
-</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>NOMBRE</th>
+          <th>DESCRIPCIÓN</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let espec of especializaciones, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ espec.name }}</td>
+              <td>{{ espec.description }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="onEditEspec(espec.specialization_id)">Editar</button>
+                <button class="btn btn-primary">Ver</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

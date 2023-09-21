@@ -7,6 +7,8 @@
   }
   
   .item {
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.4s ease;
     width: 300px;
     height: 150px;
     padding: 20px;
@@ -20,11 +22,10 @@
     font-weight: bold;
     border: 1px solid #000000;
     border-radius: 5px;
-    box-sizing: border-box;
-    transition: background-color 250ms linear;
-  
+    box-sizing: border-box;  
     &:hover {
-      background-color: #2471A3;
+      background-color: #F2F3F4;
+      transform: scale(1.05);
     }
   }
   
