@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 
@@ -7,12 +7,15 @@ import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
   templateUrl: './usuarios-crear.component.html',
   styleUrls: ['./usuarios-crear.component.scss']
 })
-export class UsuariosCrearComponent {
+export class UsuariosCrearComponent implements OnInit {
 
   formData = {
     username:'',
-    password:''
+    password:'',
+    role_id: '',
   }
+  roles: any []=[];
+
   constructor(private usuariosService: UsuariosService,   private router: Router){}
   
   @Input() title?: string = 'CREAR USUARIO';
@@ -53,7 +56,15 @@ export class UsuariosCrearComponent {
   resetForm() {
     this.formData = {
       username:'',
-      password:''
+      password:'',
+      role_id:'',
     };
+  }
+
+  ngOnInit(): void {
+    // Obtiene la lista de roles cuando se carga el componente
+    this.usuariosService.getRoles().subscribe((roles) => {
+      this.roles = roles;
+    });
   }
 }

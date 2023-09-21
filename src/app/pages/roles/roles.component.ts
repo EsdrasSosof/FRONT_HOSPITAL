@@ -13,7 +13,7 @@ export class RolesComponent {
   constructor(private rolesService: RolesService, private router: Router) { }
 
   ngOnInit() {
-    this.rolesService.getMedicines().subscribe(data => {
+    this.rolesService.getRoles().subscribe(data => {
       this.roles = data;
     });
   }

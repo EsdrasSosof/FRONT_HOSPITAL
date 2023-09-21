@@ -12,8 +12,10 @@ export class UsuariosDitComponent {
   formData = {
     user_id: 0,
     username:'',
-    password:''
+    password:'',
+    role_id: '',
   }
+  roles: any []=[];
 
   @Input() title?: string = 'ACTUALIZAR USUARIO';
 
@@ -30,6 +32,10 @@ export class UsuariosDitComponent {
       this.formData.user_id = idNumerico;
       // se envía la información para usar en loadMedicoData
       this.loadEspecData(idNumerico);
+    });
+    // Obtiene la lista de roles cuando se carga el componente
+    this.usuariosService.getRoles().subscribe((roles) => {
+      this.roles = roles;
     });
   }
 
@@ -74,9 +80,10 @@ export class UsuariosDitComponent {
 
   resetForm() {
     this.formData = {
-      user_id: 0,
+      user_id:0,
       username:'',
-      password:''
+      password:'',
+      role_id:'',
     };
   }
 }

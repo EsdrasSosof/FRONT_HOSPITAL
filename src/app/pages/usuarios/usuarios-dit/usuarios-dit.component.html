@@ -12,6 +12,13 @@
             <input [(ngModel)]="formData.password" required class="form-control" type="password" id="password" name="password"
             placeholder="Ingrese una contraseña">
         </div>
+        <div class="col-md-12">
+            <label class="form-label" for="role">ROL</label>
+            <select id="role" name="role.id" [(ngModel)]="formData.role_id" required class="form-control">
+                <option value="" disabled selected >Selecciona un rol</option>
+                <option *ngFor="let rol of roles" [value]="rol.role_id">{{rol.name}}</option>
+            </select>
+        </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary" [routerLink]="['/usuarios']">CANCELAR</button>
         </div>

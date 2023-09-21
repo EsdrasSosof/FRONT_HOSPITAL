@@ -34,15 +34,13 @@
             <label class="form-label" for="correo">DIRECCIÓN DE CORREO ELECTRÓNICO</label>
             <input [(ngModel)]="formData.email" required class="form-control" type="text" id="correo" name="correo" placeholder="Ingrese el correo electrónico personal">
         </div>
-        <!-- <div class="col-md-6">
-            <label class="form-label" for="especia">ESPECIALIZACIÓN</label>
-            <input class="form-control" type="text" id="especia" name="especi" placeholder="Ingrese una especialización">
-            <select class="form-select">
-                <option disabled selected>Seleccione una especialización</option>
-                <option></option>
-                <option></option>
+        <div class="col-md-12">
+            <label class="form-label" for="role">ESPECIALIZACIÓN</label>
+            <select id="role" name="rol_id" [(ngModel)]="formData.specialization_id" required class="form-control">
+                <option value="" disabled selected>Selecciona una especialización</option>
+                <option *ngFor="let spec of especs" [value]="spec.specialization_id">{{spec.name}}</option>
             </select>
-        </div> -->
+        </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary" [routerLink]="['/medicos']">CANCELAR</button>
         </div>

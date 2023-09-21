@@ -12,7 +12,7 @@ export class RolesService {
   
   constructor(private http: HttpClient, private readonly api: ApiService) { }
 
-  getMedicines(): Observable<any[]> {
+  getRoles(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 

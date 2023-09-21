@@ -16,8 +16,10 @@ export class PersonalCreateComponent {
     dof:'',
     address:'',
     phone:'',
-    email:''
+    email:'',
+    specialization_id:''
   }
+  especs: any []=[];
 
   constructor(private medicosService: MedicosService,   private router: Router){}
 
@@ -67,7 +69,15 @@ export class PersonalCreateComponent {
       dof:'',
       address:'',
       phone:'',
-      email:''
+      email:'',
+      specialization_id:''
     };
+  }
+
+  ngOnInit(): void {
+    // Obtiene la lista de especializaciones cuando se carga el componente
+    this.medicosService.getEspec().subscribe((espec) => {
+      this.especs = espec;
+    });
   }
 }

@@ -17,8 +17,11 @@ export class PersonalEditComponent {
     dof:'',
     address:'',
     phone:'',
-    email:''
+    email:'',
+    specialization_id:0
   }
+
+  especs: any []=[];
 
   constructor(private medicosService: MedicosService, private router: Router, private route: ActivatedRoute){}
 
@@ -33,6 +36,18 @@ export class PersonalEditComponent {
       this.formData.personal_id = idNumerico;
       // se envía la información para usar en loadMedicoData
       this.loadMedicoData(idNumerico);
+    });
+    // Obtiene la lista de especializaciones cuando se carga el componente
+    // this.medicosService.getEspec().subscribe((espec) => {
+    //   this.especs = espec;
+    // });
+    this.medicosService.getEspec().subscribe((espec) => {
+      this.especs = espec;
+      
+      // Verifica si el ID de cada especialización es numérico y conviértelo si no lo es
+      this.especs.forEach((especializacion) => {
+        especializacion.id = isNaN(Number(especializacion.id)) ? 0 : Number(especializacion.id);
+      });
     });
   }
 
@@ -97,7 +112,8 @@ export class PersonalEditComponent {
       dof:'',
       address:'',
       phone:'',
-      email:''
+      email:'',
+      specialization_id:0
     };
   }
   

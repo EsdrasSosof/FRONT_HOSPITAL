@@ -8,6 +8,7 @@
     <thead>
       <tr>
         <th>No.</th>
+        <th>NOMBRE</th>
         <th>DESCRIPCIÓN</th>
         <th>ACCIONES</th>
       </tr>
@@ -15,7 +16,7 @@
     <tbody>
         <tr *ngFor="let espec of especializaciones, let i = index">
             <td>{{i+1}}</td>
-            <!-- <td>{{espec.specialization_id}}</td> -->
+            <td>{{ espec.name }}</td>
             <td>{{ espec.description }}</td>
             <td>
               <button class="btn btn-primary" (click)="onEditEspec(espec.specialization_id)">Editar</button>
