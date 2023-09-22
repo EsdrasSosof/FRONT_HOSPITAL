@@ -60,11 +60,12 @@ export class PersonalEditComponent {
         this.formData.name = data.name;
         this.formData.lastame = data.lastame;
         // Formatea la fecha como "DD-MM-YYYY"
-        const fechaCompleta = new Date(data.dof);
-        const year = fechaCompleta.getFullYear();
-        const month = String(fechaCompleta.getMonth() + 1).padStart(2, '0');// +1 porque los meses en JavaScript van de 0 a 11
-        const day = String(fechaCompleta.getDate()).padStart(2, '0');
-        this.formData.dof = `${year}-${month}-${day}`;
+        // const fechaCompleta = new Date(data.dof);
+        // const year = fechaCompleta.getFullYear();
+        // const month = String(fechaCompleta.getMonth() + 1).padStart(2, '0');// +1 porque los meses en JavaScript van de 0 a 11
+        // const day = String(fechaCompleta.getDate()).padStart(2, '0');
+        // this.formData.dof = `${year}-${month}-${day}`;
+        this.formData.dof = data.dof;
 
         this.formData.address = data.address;
         this.formData.phone = data.phone;

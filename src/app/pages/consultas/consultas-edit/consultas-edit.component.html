@@ -1,0 +1,45 @@
+<!-- <p>consultas-edit works!</p> -->
+<app-modal>
+    <h2>Crear un Perfil de Personal</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <!-- <div class="col-md-6">
+            <label class="form-label" for="nacimiento">FECHA DE CONSULTA</label>
+            <input [(ngModel)]="formData.date_consultation" required class="form-control" type="text" id="nacimiento" name="nacimiento" placeholder="El formato es AAAA-MM-DD">
+        </div> -->
+        <div class="col-md-6">
+            <label class="form-label" for="nacimiento">
+                FECHA DE CONSULTA
+            </label>
+            <input
+                [(ngModel)]="formData.date_consultation" required
+                onChange={handleInputChange}
+                name="nacimiento_id"
+                id="nacimiento"
+                class="form-control"
+                type="date"
+            />
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="motive">MOTIVO DE CONSULTA</label>
+            <select id="motive" name="motive_id" [(ngModel)]="formData.motive_id" required class="form-control">
+                <option value="" disabled selected>Selecciona un motivo de consulta</option>
+                <option *ngFor="let motive of motives" [value]="motive.motive_id">{{motive.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="patient">PACIENTE</label>
+            <select id="patient" name="patient_id" [(ngModel)]="formData.patient_id" required class="form-control">
+                <option value="" disabled selected>Selecciona un paciente</option>
+                <option *ngFor="let patient of patients" [value]="patient.patient_id">
+                    {{patient.identification}} {{patient.first_name}} {{patient.second_name}} 
+                    {{ patient.lastame }} {{patient.second_lastame}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/consultas']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">ACTUALIZAR CONSULTA</button>
+        </div>
+    </form>
+</app-modal>

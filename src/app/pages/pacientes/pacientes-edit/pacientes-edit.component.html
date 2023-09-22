@@ -22,9 +22,23 @@
             <label class="form-label" for="second_lastame">SEGUNDO APELLIDO</label>
             <input [(ngModel)]="formData.second_lastame" class="form-control" type="text" id="second_lastame" name="second_lastame" placeholder="Ingrese el segundo apellido">
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <label class="form-label" for="nacimiento">FECHA DE NACIMIENTO</label>
             <input [(ngModel)]="formData.dof" required class="form-control" type="text" id="nacimiento" name="nacimiento" placeholder="El formato es AAAA-MM-DD">
+        </div> -->
+        <div class="col-md-6">
+            <label class="form-label">
+                FECHA DE NACIMIENTO
+            </label>
+            <input
+                readonly
+                [(ngModel)]="formData.dof" required
+                onChange={handleInputChange}
+                name="nacimiento"
+                id="nacimiento"
+                class="form-control"
+                type="date"
+            />
         </div>
         <div class="col-md-6">
             <label class="form-label" for="residencia">DIRECCIÓN DE RESIDENCIA</label>

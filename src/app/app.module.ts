@@ -37,6 +37,8 @@ import { MotivosComponent } from './pages/motivos/motivos.component';
 import { MotivosCrearComponent } from './pages/motivos/motivos-crear/motivos-crear.component';
 import { MotivosEditComponent } from './pages/motivos/motivos-edit/motivos-edit.component';
 import { ConsultasComponent } from './pages/consultas/consultas.component';
+import { ConsultasCrearComponent } from './pages/consultas/consultas-crear/consultas-crear.component';
+import { ConsultasEditComponent } from './pages/consultas/consultas-edit/consultas-edit.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { ConsultasComponent } from './pages/consultas/consultas.component';
     MotivosComponent,
     MotivosCrearComponent,
     MotivosEditComponent,
-    ConsultasComponent
+    ConsultasComponent,
+    ConsultasCrearComponent,
+    ConsultasEditComponent
   ],
   imports: [
     BrowserModule,

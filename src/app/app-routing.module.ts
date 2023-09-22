@@ -27,6 +27,8 @@ import { MotivosComponent } from './pages/motivos/motivos.component';
 import { MotivosCrearComponent } from './pages/motivos/motivos-crear/motivos-crear.component';
 import { MotivosEditComponent } from './pages/motivos/motivos-edit/motivos-edit.component';
 import { ConsultasComponent } from './pages/consultas/consultas.component';
+import { ConsultasCrearComponent } from './pages/consultas/consultas-crear/consultas-crear.component';
+import { ConsultasEditComponent } from './pages/consultas/consultas-edit/consultas-edit.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -55,6 +57,8 @@ const routes: Routes = [
 	{ path: 'motivos/motivos-crear', component: MotivosCrearComponent, canActivate: [AuthGuardService]},
 	{ path: 'motivos/motivos-edit/:id', component: MotivosEditComponent, canActivate: [AuthGuardService]},
 	{ path: 'consultas', component: ConsultasComponent, canActivate: [AuthGuardService]},
+	{ path: 'consultas/consultas-crear', component: ConsultasCrearComponent, canActivate: [AuthGuardService]},
+	{ path: 'consultas/consultas-edit/:id', component: ConsultasEditComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({

@@ -1,1 +1,34 @@
-<p>consultas works!</p>
+<!-- <p>consultas works!</p> -->
+<div  class="table-container">
+    <div class="botones-tabla">
+      <app-button></app-button>
+      <button [routerLink]="['/consultas/consultas-crear']" class="btn btn-primary">Crear una Consulta</button>
+    </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>MOTIVO DE LA CONSULTA</th>
+          <th>FECHA DE LA CONSULTA</th>
+          <th>IDENTIFICACIÓN</th>
+          <th>NOMBRES DE PACIENTE</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let consul of consultas, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ consul.motive_id.name }}</td>
+              <td>{{ consul.date_consultation }}</td>
+              <td>{{ consul.patient_id.identification }}</td>
+              <td>{{ consul.patient_id.first_name }} {{ consul.patient_id.lastame }}</td>
+              <td>
+                <!-- <button class="btn btn-primary" (click)="onEditConsultation(consul.consultation_id)">Editar</button> -->
+                <button class="btn btn-primary">Ver</button>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

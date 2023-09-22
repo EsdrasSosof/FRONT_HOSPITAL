@@ -8,8 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class MotivosService {
 
- 
-  private apiUrl = 'http://localhost:3000/api/motives';
   private apiUrl2 = 'http://localhost:3000/api';
   
   constructor(private http: HttpClient, private readonly api: ApiService) { }
