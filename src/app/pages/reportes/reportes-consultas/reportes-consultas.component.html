@@ -1,10 +1,10 @@
-<!-- <p>consultas works!</p> -->
+<!-- <p>reportes-consultas works!</p> -->
 <div  class="table-container">
-  <div class="botones-tabla">
-    <app-button></app-button>
-    <!-- <button [routerLink]="['/consultas/consultas-crear']" class="btn btn-primary">Crear una Consulta</button> -->
-  </div>
-  <!-- <div class="table-responsive">
+    <div class="botones-tabla">
+      <!-- <app-button></app-button> -->
+      <button (click)="goBack()" class="btn btn-primary">Regresar</button>
+    </div>
+  <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
@@ -20,18 +20,14 @@
           <tr *ngFor="let consul of consultas, let i = index">
               <td>{{i+1}}</td>
               <td>{{ consul.motive_id.name }}</td>
-              <td>{{ consul.date_consultation }}</td>
+              <td>{{ formatDate(consul.date_consultation) }}</td>
               <td>{{ consul.patient_id.identification }}</td>
               <td>{{ consul.patient_id.first_name }} {{ consul.patient_id.lastame }}</td>
               <td>
-                <button class="btn btn-primary" (click)="onEditConsultation(consul.consultation_id)">Editar</button>
                 <button class="btn btn-primary">Ver</button>
               </td>
             </tr>
       </tbody>
-      </table>
-    </div> -->
-    <div class="menu">
-      <div class="item" [routerLink]="['/consultas/consultas-crear']" >Crear una Consulta</div>
-    </div>  
+    </table>
+  </div>
 </div>

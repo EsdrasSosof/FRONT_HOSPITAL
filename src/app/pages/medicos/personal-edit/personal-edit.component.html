@@ -18,10 +18,6 @@
             <label class="form-label" for="apellido">APELIDOS</label>
             <input [(ngModel)]="formData.lastame" class="form-control" type="text" id="apellido" name="apellido" placeholder="Ingrese los apellidos">
         </div>
-        <!-- <div class="col-md-6">
-            <label class="form-label" for="nacimiento">FECHA DE NACIMIENTO</label>
-            <input [(ngModel)]="formData.dof" required class="form-control" type="text" id="nacimiento" name="nacimiento" placeholder="El formato es AAAA-MM-DD">
-        </div> -->
         <div class="col-md-6">
             <label class="form-label">
                 FECHA DE NACIMIENTO
@@ -49,7 +45,7 @@
             <input [(ngModel)]="formData.email" required class="form-control" type="text" id="correo" name="correo" placeholder="Ingrese el correo electrónico personal">
         </div>
         <div class="col-md-12">
-            <label class="form-label" for="role">ESPECIALIZACIÓN</label>
+            <label class="form-label" for="role">ESPECIALIZACIÓN <span [style.color]="'red'" [style.margin-left]="'2px'">*</span> </label>
             <select id="role" name="rol_id" [(ngModel)]="formData.specialization_id" required class="form-control">
                 <option value="" disabled selected>Selecciona una especialización</option>
                 <option *ngFor="let spec of especs" [value]="spec.specialization_id">{{spec.name}}</option>

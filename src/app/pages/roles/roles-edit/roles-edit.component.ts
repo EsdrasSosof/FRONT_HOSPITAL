@@ -39,7 +39,7 @@ export class RolesEditComponent {
         this.formData.name = data.name;
       },
       (error) => {
-        console.error('Error al cargar la información del médico', error);
+        console.error('Error al cargar la información del rol', error);
       }
     );
   }
@@ -49,13 +49,13 @@ export class RolesEditComponent {
     // Llama al servicio para actualizar la información del médico
     this.rolesService.updateRoles(this.formData.role_id, this.formData).subscribe(
       (response) => {
-        console.log('Médico actualizado exitosamente:', response);
+        console.log('Rol actualizado exitosamente:', response);
         this.resetForm();
-        alert('El médico se actualizó exitosamente');
+        alert('El rol se actualizó exitosamente');
         this.router.navigate(['/roles']);
       },
       (error) => {
-        console.error('Error al actualizar el médico:', error);
+        console.error('Error al actualizar el rol:', error);
         // Maneja el error de actualización aquí
         if (error && error.error && error.error.message && Array.isArray(error.error.message)) {
           const errorMessages = error.error.message;

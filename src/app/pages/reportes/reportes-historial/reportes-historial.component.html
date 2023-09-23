@@ -1,11 +1,11 @@
-<!-- <p>historialmed works!</p> -->
+<!-- <p>reportes-historial works!</p> -->
 <div  class="table-container">
     <div class="botones-tabla">
-        <!-- <button [routerLink]="['/home']" class="btn btn-primary">Regresar</button> -->
-        <app-button></app-button>
+      <!-- <app-button></app-button> -->
+      <button (click)="goBack()" class="btn btn-primary">Regresar</button>
     </div>
-  <!-- <div class="table-responsive">
-    <table class="table">
+    <div class="table-responsive">
+  <table class="table">
       <thead>
         <tr>
           <th>No.</th>
@@ -25,8 +25,5 @@
             </tr>
       </tbody>
     </table>
-  </div> -->
-  <div class="menu">
-    <div class="item" [routerLink]="['/consultas/consultas-crear']" >Crear una Consulta</div>
-  </div> 
+  </div>
 </div>

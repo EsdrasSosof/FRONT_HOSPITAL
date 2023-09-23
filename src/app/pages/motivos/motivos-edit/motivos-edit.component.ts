@@ -21,9 +21,9 @@ export class MotivosEditComponent {
   ngOnInit(): void {
     // Obtén el ID del médico de la ruta actual
     this.route.params.subscribe((params) => {
-      const medicoId = params['id'];
+      const motiveId = params['id'];
       // Convierte el ID de cadena a número
-      const idNumerico = parseInt(medicoId, 10);
+      const idNumerico = parseInt(motiveId, 10);
       // Asigna el ID numérico al formData
       this.formData.motive_id = idNumerico;
       // se envía la información para usar en loadMotiveData

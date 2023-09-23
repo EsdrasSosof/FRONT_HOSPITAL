@@ -21,6 +21,7 @@ export class PersonalEditComponent {
     specialization_id:0
   }
 
+  medico: any;
   especs: any []=[];
 
   constructor(private medicosService: MedicosService, private router: Router, private route: ActivatedRoute){}
@@ -38,9 +39,6 @@ export class PersonalEditComponent {
       this.loadMedicoData(idNumerico);
     });
     // Obtiene la lista de especializaciones cuando se carga el componente
-    // this.medicosService.getEspec().subscribe((espec) => {
-    //   this.especs = espec;
-    // });
     this.medicosService.getEspec().subscribe((espec) => {
       this.especs = espec;
       
@@ -59,14 +57,12 @@ export class PersonalEditComponent {
         this.formData.identification = data.identification;
         this.formData.name = data.name;
         this.formData.lastame = data.lastame;
-        // Formatea la fecha como "DD-MM-YYYY"
-        // const fechaCompleta = new Date(data.dof);
-        // const year = fechaCompleta.getFullYear();
-        // const month = String(fechaCompleta.getMonth() + 1).padStart(2, '0');// +1 porque los meses en JavaScript van de 0 a 11
-        // const day = String(fechaCompleta.getDate()).padStart(2, '0');
-        // this.formData.dof = `${year}-${month}-${day}`;
-        this.formData.dof = data.dof;
-
+        // Formatea la fecha
+        const fechaCompleta = new Date(data.dof);
+        const year = fechaCompleta.getFullYear();
+        const month = String(fechaCompleta.getMonth() + 1).padStart(2, '0');// +1 porque los meses en JavaScript van de 0 a 11
+        const day = String(fechaCompleta.getDate()).padStart(2, '0');
+        this.formData.dof = `${year}-${month}-${day}`;
         this.formData.address = data.address;
         this.formData.phone = data.phone;
         this.formData.email = data.email;
