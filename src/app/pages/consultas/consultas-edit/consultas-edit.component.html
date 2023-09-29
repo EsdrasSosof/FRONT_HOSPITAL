@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-12">
             <label class="form-label" for="patient">PACIENTE</label>
-            <select id="patient" name="patient_id" [(ngModel)]="formData.patient_id" required class="form-control">
+            <select id="patient" name="patient_id" [(ngModel)]="formData.patient_id" required class="form-select">
                 <option value="" disabled selected>Selecciona un paciente</option>
                 <option *ngFor="let patient of patients" [value]="patient.patient_id">
                     {{patient.identification}} {{patient.first_name}} {{patient.second_name}} 

@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-12">
             <label class="form-label" for="role">ESPECIALIZACIÓN <span [style.color]="'red'" [style.margin-left]="'2px'">*</span> </label>
-            <select id="role" name="rol_id" [(ngModel)]="formData.specialization_id" required class="form-control">
+            <select id="role" name="rol_id" [(ngModel)]="formData.specialization_id" required class="form-select">
                 <option value="" disabled selected>Selecciona una especialización</option>
                 <option *ngFor="let spec of especs" [value]="spec.specialization_id">{{spec.name}}</option>
             </select>

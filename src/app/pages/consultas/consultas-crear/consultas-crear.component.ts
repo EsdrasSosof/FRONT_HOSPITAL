@@ -35,7 +35,7 @@ export class ConsultasCrearComponent {
         console.log('Consulta creada exitosamente:', response);
         this.resetForm();
         alert('La consulta se creó exitosamente');
-        this.router.navigate(['/consultas']);
+        this.router.navigate(['/diagnostico']);
       },
       (error) => {
         console.error('Error al crear la consulta:', error);

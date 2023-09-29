@@ -32,6 +32,8 @@ import { ConsultasEditComponent } from './pages/consultas/consultas-edit/consult
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { ReportesConsultasComponent } from './pages/reportes/reportes-consultas/reportes-consultas.component';
 import { ReportesHistorialComponent } from './pages/reportes/reportes-historial/reportes-historial.component';
+import { DiagnosticoComponent } from './pages/diagnostico/diagnostico.component';
+import { RecetaComponent } from './pages/receta/receta.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -65,6 +67,8 @@ const routes: Routes = [
 	{ path: 'reportes', component: ReportesComponent, canActivate: [AuthGuardService]},
 	{ path: 'reportes/reportes-consulta', component: ReportesConsultasComponent, canActivate: [AuthGuardService]},
 	{ path: 'reportes/reportes-historial', component: ReportesHistorialComponent, canActivate: [AuthGuardService]},
+	{ path: 'diagnostico', component: DiagnosticoComponent, canActivate: [AuthGuardService]},
+	{ path: 'receta', component: RecetaComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({

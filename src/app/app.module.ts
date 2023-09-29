@@ -42,6 +42,8 @@ import { ConsultasEditComponent } from './pages/consultas/consultas-edit/consult
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { ReportesConsultasComponent } from './pages/reportes/reportes-consultas/reportes-consultas.component';
 import { ReportesHistorialComponent } from './pages/reportes/reportes-historial/reportes-historial.component';
+import { DiagnosticoComponent } from './pages/diagnostico/diagnostico.component';
+import { RecetaComponent } from './pages/receta/receta.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { ReportesHistorialComponent } from './pages/reportes/reportes-historial/
     ConsultasEditComponent,
     ReportesComponent,
     ReportesConsultasComponent,
-    ReportesHistorialComponent
+    ReportesHistorialComponent,
+    DiagnosticoComponent,
+    RecetaComponent
   ],
   imports: [
     BrowserModule,

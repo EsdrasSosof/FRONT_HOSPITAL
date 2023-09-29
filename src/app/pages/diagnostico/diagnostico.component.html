@@ -1,0 +1,36 @@
+<!-- <p>diagnostico works!</p> -->
+<app-modal>
+    <h2>{{title}}</h2>
+    <form class="row g-3" (ngSubmit)="onSubmit($event)">
+        <div class="col-md-12">
+            <label class="form-label" for="sintoma">DETALLE DEL SÍNTOMA</label>
+            <input [(ngModel)]="formData.symptom_detail" required class="form-control" type="text" id="sintoma"
+            name="sintoma" placeholder="Ingrese el detalle de los síntomas detectados">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="pre_existente">ENFERMEDADES PRE-EXISTNTENTES</label>
+            <input [(ngModel)]="formData.pre_existing" required class="form-control" type="text" id="pre_existente"
+            name="pre_existente" placeholder="Si existe alguna enfermedad previa, anótela aquí">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="detected">ENFERMEDADES DETECTADAS</label>
+            <input [(ngModel)]="formData.Detected_disease" required class="form-control" type="text" id="detected"
+            name="detected" placeholder="Describa la o las enfermedades detectadas durante el diagnóstico">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label" for="consulta">ELEGIR CONSULTA</label>
+            <select id="consulta" name="consulta_id" [(ngModel)]="formData.consultation_id" required class="form-select">
+                <option disabled selected>Selecciona una consulta para asociar</option>
+                <option *ngFor="let consulta of consultas" [value]="consulta.consultation_id">
+                    {{consulta.date_consultation}} {{consulta.patient_id.name}} {{consulta.patient_id.second_name}} 
+                    {{ consulta.patient_id.lastame }} {{consulta.patient_id.second_lastame}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/consultas']">CANCELAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">GUARDAR DIAGNÓSTICO</button>
+        </div>
+    </form>
+</app-modal>
