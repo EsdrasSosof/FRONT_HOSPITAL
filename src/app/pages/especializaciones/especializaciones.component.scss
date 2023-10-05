@@ -25,6 +25,11 @@ button{
       outline: 0;
   }
 }
+
+.table-responsive{
+  display:flex;
+  justify-content: center;
+}
   
 
 .table-container {
@@ -32,7 +37,7 @@ button{
   }
   
   .table {
-    width: 100%;
+    width: 65%;
     border-collapse: collapse;
   }
   

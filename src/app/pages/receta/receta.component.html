@@ -16,18 +16,18 @@
             <input [(ngModel)]="formData.dose" required class="form-control" type="text" id="colegiado" 
             name="colegiado" placeholder="Ingrese el detalle de la dosis de la medicina recetada">
         </div>
-        <div class="col-md-8">
+        <!-- <div class="col-md-8">
             <label class="form-label" for="medicina">SELECCIONE LA MEDICINA</label>
             <select id="medicina" name="medicine_id" [(ngModel)]="formData2.medicine_id" required class="form-select">
                 <option value="" disabled selected>Selecciona una medicina existente</option>
                 <option *ngFor="let medicina of medicinas" [value]="medicina.medicine_id">{{medicina.comercial_name}}</option>
             </select>
-        </div>
+        </div> -->
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary" [routerLink]="['/consultas']">CANCELAR</button>
         </div>
         <div class="col-md-6">
-            <button type="submit" class="btn btn-primary">CREAR PERFIL</button>
+            <button type="submit" class="btn btn-primary">CREAR RECETA</button>
         </div>
     </form>
 </app-modal>

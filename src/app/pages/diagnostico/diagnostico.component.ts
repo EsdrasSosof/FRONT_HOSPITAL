@@ -35,7 +35,7 @@ export class DiagnosticoComponent {
         console.log('Diagnóstico creado exitosamente:', response);
         this.resetForm();
         alert('El diagnóstico se creó exitosamente');
-        this.router.navigate(['/consultas']);
+        this.router.navigate(['/receta']);
       },
       (error) => {
         console.error('Error al crear el diagnóstico:', error);
