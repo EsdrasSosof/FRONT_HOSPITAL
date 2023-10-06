@@ -34,6 +34,7 @@ import { ReportesConsultasComponent } from './pages/reportes/reportes-consultas/
 import { ReportesHistorialComponent } from './pages/reportes/reportes-historial/reportes-historial.component';
 import { DiagnosticoComponent } from './pages/diagnostico/diagnostico.component';
 import { RecetaComponent } from './pages/receta/receta.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/login', pathMatch: 'full' },

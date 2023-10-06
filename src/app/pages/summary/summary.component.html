@@ -1,13 +1,18 @@
 <!-- <p>summary works!</p> -->
-<div class="menu">
-  <div class="item" [routerLink]="['/pacientes']">Pacientes Médicos</div>
-  <div class="item" [routerLink]="['/consultas']">Crear Consulta</div>
-  <!-- <div class="item" [routerLink]="['/historiales']">Historiales Médicos</div> -->
-  <div class="item" [routerLink]="['/medicos']">Personal Médico</div>
-  <div class="item" [routerLink]="['/especializaciones']">Especializaciones Médica</div>
-  <div class="item" [routerLink]="['/medicinas']">Medicinas</div>
-  <div class="item" [routerLink]="['/motivos']">Motivos de Consulta</div>
-  <div class="item" [routerLink]="['/roles']">Mantenimiento de Roles</div>
-  <div class="item" [routerLink]="['/usuarios']">Mantenimiento de usuarios</div>
-  <div class="item" [routerLink]="['/reportes']">Reportes</div>
-</div>  
+<div>
+  <div>
+    <div class="menu">
+        <div class="item" [routerLink]="['/pacientes']">Pacientes Médicos</div>
+        <div class="item" [routerLink]="['/consultas']">Crear Consulta</div>
+        <!-- <div class="item" [routerLink]="['/grafica']">Gráfica</div> -->
+        <div class="item" [routerLink]="['/medicos']">Personal Médico</div>
+        <div class="item" [routerLink]="['/especializaciones']">Especializaciones Médica</div>
+        <div class="item" [routerLink]="['/medicinas']">Medicinas</div>
+        <div class="item" [routerLink]="['/motivos']">Motivos de Consulta</div>
+        <div class="item" [routerLink]="['/roles']">Mantenimiento de Roles</div>
+        <div class="item" [routerLink]="['/usuarios']">Mantenimiento de usuarios</div>
+        <div class="item" [routerLink]="['/reportes']">Reportes</div>
+      </div>
+  </div>
+<app-grafica></app-grafica>
+</div>
