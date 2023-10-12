@@ -45,6 +45,8 @@ import { ReportesHistorialComponent } from './pages/reportes/reportes-historial/
 import { DiagnosticoComponent } from './pages/diagnostico/diagnostico.component';
 import { RecetaComponent } from './pages/receta/receta.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
+import { ModalgenComponent } from './components/modalgen/modalgen.component';
+import { FormularioreporteComponent } from './pages/reportes/formularioreporte/formularioreporte.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,9 @@ import { GraficaComponent } from './components/grafica/grafica.component';
     ReportesHistorialComponent,
     DiagnosticoComponent,
     RecetaComponent,
-    GraficaComponent
+    GraficaComponent,
+    ModalgenComponent,
+    FormularioreporteComponent
   ],
   imports: [
     BrowserModule,

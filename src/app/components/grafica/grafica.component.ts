@@ -28,7 +28,7 @@ export class GraficaComponent implements OnDestroy, OnInit {
 
   ngAfterViewInit() {
     this.generateChart(this.graphData);
-    console.log('Datos de graphData en ngAfterView:', this.graphData);
+    // console.log('Datos de graphData en ngAfterView:', this.graphData);
   }
 
   ngOnDestroy() {
@@ -36,7 +36,7 @@ export class GraficaComponent implements OnDestroy, OnInit {
     if (this.myChart) {
       this.myChart.destroy();
     }
-    console.log('prueba');
+    // console.log('prueba');
   }
 
   generateChart(data: any[]) {
