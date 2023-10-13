@@ -6,25 +6,24 @@
   <div class="menu">
       <div class="item" [routerLink]="['/reportes/reportes-consulta']">Reporte de consultas</div>
       <!-- <div class="item" [routerLink]="['/reportes/reportes-historial']">Reporte de Historial Médico</div> -->
-      <div class="item" (click)="openModal()">Reporte de Historial Médico
-      </div>
+      <div class="item" (click)="openModal()">Reporte de Historial Médico</div>
   </div>
 </div>
 <app-modalgen *ngIf="modalService.isModalVisible()">
   <form class="row g-3">
     <div class="col-md-6">
       <label class="form-label" for="inicial"> FECHA INICIAL </label>
-      <input required onChange={handleInputChange} name="inicial" id="inicial" class="form-control" type="date"/>
+      <input required onChange={handleInputChange} [(ngModel)]="formData.fechaInicial" name="inicial" id="inicial" class="form-control" type="date"/>
     </div>
     <div class="col-md-6">
       <label class="form-label" for="final"> FECHA FINAL </label>
-      <input required onChange={handleInputChange} name="final" id="final" class="form-control" type="date"/>
+      <input required onChange={handleInputChange} [(ngModel)]="formData.fechaFinal" name="final" id="final" class="form-control" type="date"/>
     </div>
     <div class="col-md-6">
       <button type="submit" class="btn btn-primary" [routerLink]="['/reportes']">CANCELAR</button>
     </div>
     <div class="col-md-6">
-        <button type="submit" class="btn btn-primary">CONTINUAR</button>
+        <button type="submit" class="btn btn-primary" (click)="continuar()">CONTINUAR</button>
     </div>
   </form>
 </app-modalgen>

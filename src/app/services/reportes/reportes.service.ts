@@ -27,5 +27,15 @@ export class ReportesService {
     });
     return this.http.get<any[]>(`${this.apiUrl2}/med-records`, { headers });
   }
+
+  ObtenerInfo(data: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
+    // Realiza la solicitud POST enviando los datos y encabezados
+    return this.http.post(`${this.apiUrl2}/med-records/search`, data, { headers });
+  }
   
 }
