@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { Observable } from 'rxjs';
@@ -37,5 +37,24 @@ export class ReportesService {
     // Realiza la solicitud POST enviando los datos y encabezados
     return this.http.post(`${this.apiUrl2}/med-records/search`, data, { headers });
   }
+
+  // ObtenerDocumento(data: any): Observable<HttpResponse<Blob>> {
+  //   const token = localStorage.getItem('token');
+  //   const headers = new HttpHeaders({
+  //     'Authorization': `Bearer ${token}`
+  //   });
+  
+  //   return this.http.post(`${this.apiUrl2}/reporte-historial`, data, { headers, observe: 'response', responseType: 'blob' });
+  // }
+
+  ObtenerDocumento(record_id: number): Observable<HttpResponse<Blob>> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  
+    // Utiliza una solicitud GET para obtener el PDF
+    return this.http.get(`${this.apiUrl2}/reporte-historial/${record_id}`, { headers, observe: 'response', responseType: 'blob' });
+  }  
   
 }

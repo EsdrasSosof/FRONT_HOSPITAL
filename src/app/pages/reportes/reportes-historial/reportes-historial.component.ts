@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportesService } from 'src/app/services/reportes/reportes.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalgenService } from '../../../../app/services/modal/modalgen.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-reportes-historial',
@@ -16,6 +17,10 @@ export class ReportesHistorialComponent implements OnInit {
     fechaFinal: ''
   }
 
+  formData2 = {
+    record_id: 0
+  }
+
   fechaInicial: String;
   fechaFinal: String;
 
@@ -23,7 +28,9 @@ export class ReportesHistorialComponent implements OnInit {
 
   modalService: ModalgenService; // Declara una propiedad para el servicio
 
-  constructor( modalService: ModalgenService, private reportesService: ReportesService, private router: Router) { 
+  constructor( modalService: ModalgenService, private reportesService: ReportesService, private router: Router,
+    private route: ActivatedRoute) {
+
     this.modalService = modalService;
     const navigation = this.router.getCurrentNavigation();
     const state = navigation?.extras.state as {
@@ -60,9 +67,8 @@ export class ReportesHistorialComponent implements OnInit {
     window.history.back();
   }
 
-  onSubmit(event: Event) {
+  onSubmit(event: Event): void {
     event.preventDefault();
-
     // Convierte los valores del formulario a cadenas (strings)
     this.formData.fechaInicial = this.formData.fechaInicial.toString();
     this.formData.fechaFinal = this.formData.fechaFinal.toString();
@@ -95,4 +101,48 @@ export class ReportesHistorialComponent implements OnInit {
       fechaFinal: ''
     };
   }
+
+  onEditMedico(record_id: number): void {
+    // this.formData2.record_id = record_id;
+    this.formData2.record_id = +record_id;
+    // console.log('dato en oneditmedico',record_id);
+    // console.log(typeof record_id);
+    this.loadPdf();
+  }
+
+  loadPdf(): void {
+    if (this.formData2.record_id) {
+      this.reportesService.ObtenerDocumento(this.formData2.record_id).subscribe(
+        (response: HttpResponse<Blob>) => {
+          const blob = response.body;
+  
+          if (blob) {
+            // Crear una nueva URL para el blob
+            const url = window.URL.createObjectURL(blob);
+  
+            // Crear un elemento <a> para descargar el PDF
+            const a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank'; 
+            // a.download = 'reporte.pdf'; // Nombre del archivo PDF para descarga
+            a.style.display = 'none';
+  
+            // Agregar el elemento <a> al documento y simular un clic
+            document.body.appendChild(a);
+            a.click();
+  
+            // Liberar el objeto URL y remover el elemento <a>
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+          } else {
+            console.error('El PDF está vacío o no se ha encontrado.');
+          }
+        },
+        (error) => {
+          console.error('Error al cargar el PDF', error);
+        }
+      );
+    }
+  }
+  
 }

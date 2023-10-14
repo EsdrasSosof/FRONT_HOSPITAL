@@ -20,7 +20,7 @@
               <td>{{ historial.patient_id.first_name }}</td>
               <td>{{ historial.patient_id.lastame }}</td>
               <td>
-                <button class="btn btn-primary">Ver</button>
+                <button class="btn btn-primary" (click)="onEditMedico(historial.record_id)">Ver</button>
               </td>
             </tr>
       </tbody>
