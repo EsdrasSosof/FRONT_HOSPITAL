@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class GraficaService {
 
-  private apiUrl2 = 'http://localhost:3000/api';
+  // private apiUrl2 = 'http://localhost:3000/api';
+  private apiUrl2 = 'https://nestjs-backend-pg2.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 

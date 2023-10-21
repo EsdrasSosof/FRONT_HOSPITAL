@@ -8,13 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
 
-  private apiUrl = 'http://localhost:3000/api/users';
-  private apiUrl2 = 'http://localhost:3000/api';
+  // private apiUrl = 'http://localhost:3000/api/users';
+  // private apiUrl2 = 'http://localhost:3000/api';
+  private apiUrl2 = 'https://nestjs-backend-pg2.onrender.com/api';
   
   constructor(private http: HttpClient, private readonly api: ApiService) { }
 
   getMedicines(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    // return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(`${this.apiUrl2}/users`);
   }
 
   createUser(data: any): Observable<any> {
@@ -24,7 +26,8 @@ export class UsuariosService {
     });
 
     // Realiza la solicitud POST enviando los datos y encabezados
-    return this.http.post(this.apiUrl, data, { headers });
+    // return this.http.post(this.apiUrl, data, { headers });
+    return this.http.post<any[]>(`${this.apiUrl2}/users`, { headers });
   }
 
   updateUser(id: number, data: any): Observable<any> {
@@ -33,7 +36,7 @@ export class UsuariosService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.patch(`${this.apiUrl}/${id}`, data, { headers });
+    return this.http.patch(`${this.apiUrl2}/users/${id}`, data, { headers });
   }
 
   getUserById(id: number): Observable<any> {
@@ -42,7 +45,7 @@ export class UsuariosService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<any>(`${this.apiUrl2}/users/${id}`, { headers });
   }
 
   getRoles(): Observable<any[]> {

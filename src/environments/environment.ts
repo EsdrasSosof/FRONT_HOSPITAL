@@ -1,8 +1,14 @@
 export const environment = {
-    production: false,
+    // production: false,
+    // apiServer: {
+    //   protocol: 'http',
+    //   ip: 'localhost',
+    //   port: '3000',
+    // },
+    production: true,
     apiServer: {
-      protocol: 'http',
-      ip: 'localhost',
-      port: '3000',
+      protocol: 'https',
+      ip: 'nestjs-backend-pg2.onrender.com',
+      port: '',
     },
   };

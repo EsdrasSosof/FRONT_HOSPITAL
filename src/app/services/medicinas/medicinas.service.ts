@@ -8,12 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class MedicinasService {
 
-  private apiUrl = 'http://localhost:3000/api/medicines';
+  // private apiUrl2 = 'http://localhost:3000/api/medicines';
+  private apiUrl2 = 'https://nestjs-backend-pg2.onrender.com/api';
 
   constructor(private http: HttpClient, private readonly api: ApiService) { }
 
   getMedicines(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    // return this.http.get<any[]>(this.apiUrl2);
+    return this.http.get<any[]>(`${this.apiUrl2}/medicines`);
   }
   createMedicines(data: any): Observable<any> {
     const token = localStorage.getItem('token');
@@ -22,7 +24,8 @@ export class MedicinasService {
     });
 
     // Realiza la solicitud POST enviando los datos y encabezados
-    return this.http.post(this.apiUrl, data, { headers });
+    // return this.http.post(this.apiUrl2, data, { headers });
+    return this.http.post<any[]>(`${this.apiUrl2}/medicines`,data, { headers });
   }
 
   updateMedicna(id: number, data: any): Observable<any> {
@@ -31,7 +34,8 @@ export class MedicinasService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.patch(`${this.apiUrl}/${id}`, data, { headers });
+    // return this.http.patch(`${this.apiUrl2}/${id}`, data, { headers });
+    return this.http.patch(`${this.apiUrl2}/medicines/${id}`, data, { headers });
   }
 
   getMedicinaById(id: number): Observable<any> {
@@ -40,7 +44,7 @@ export class MedicinasService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<any>(`${this.apiUrl2}/medicines/${id}`, { headers });
   }
 
 }

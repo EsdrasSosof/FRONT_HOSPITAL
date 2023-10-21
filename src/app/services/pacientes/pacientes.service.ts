@@ -7,12 +7,14 @@ import { ApiService } from '../api/api.service';
   providedIn: 'root'
 })
 export class PacientesService {
-  private apiUrl = 'http://localhost:3000/api/med-patients';
+  // private apiUrl = 'http://localhost:3000/api/med-patients';
+  private apiUrl2 = 'https://nestjs-backend-pg2.onrender.com/api';
 
   constructor(private http: HttpClient, private readonly api: ApiService) { }
 
   getPacientes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    // return this.http.get<any[]>(this.apiUrl2);
+    return this.http.get<any[]>(`${this.apiUrl2}/med-patients`);
   }
 
   createPacientes(data: any): Observable<any> {
@@ -21,7 +23,8 @@ export class PacientesService {
       Authorization: `Bearer ${token}`
     });
     // Realiza la solicitud POST enviando los datos y encabezados
-    return this.http.post(this.apiUrl, data, { headers });
+    // return this.http.post(this.apiUrl2, data, { headers });
+    return this.http.post(`${this.apiUrl2}/med-patients`, data, { headers });
   }
 
   updatePaciente(id: number, data: any): Observable<any> {
@@ -30,7 +33,7 @@ export class PacientesService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.patch(`${this.apiUrl}/${id}`, data, { headers });
+    return this.http.patch(`${this.apiUrl2}/med-patients/${id}`, data, { headers });
   }
 
   getPacienteById(id: number): Observable<any> {
@@ -39,6 +42,6 @@ export class PacientesService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<any>(`${this.apiUrl2}/med-patients/${id}`, { headers });
   }
 }

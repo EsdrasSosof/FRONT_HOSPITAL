@@ -13,7 +13,7 @@ interface HttpOptions {
   responseType?: 'arraybuffer' | 'blob' | 'json' | 'text'
 }
 
-export const API_SERVER = `${environment.apiServer.protocol}://${environment.apiServer.ip}:${environment.apiServer.port}`;
+export const API_SERVER = `${environment.apiServer.protocol}://${environment.apiServer.ip}`;
 const API_URL = API_SERVER;
 
 @Injectable({

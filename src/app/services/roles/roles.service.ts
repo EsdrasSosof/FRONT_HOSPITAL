@@ -8,12 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class RolesService {
 
-  private apiUrl = 'http://localhost:3000/api/roles';
+  // private apiUrl = 'http://localhost:3000/api/roles';
+  private apiUrl2 = 'https://nestjs-backend-pg2.onrender.com/api';
   
   constructor(private http: HttpClient, private readonly api: ApiService) { }
 
   getRoles(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    // return this.http.get<any[]>(this.apiUrl2);
+    return this.http.get<any[]>(`${this.apiUrl2}/roles`);
   }
 
   createRoles(data: any): Observable<any> {
@@ -23,7 +25,8 @@ export class RolesService {
     });
 
     // Realiza la solicitud POST enviando los datos y encabezados
-    return this.http.post(this.apiUrl, data, { headers });
+    // return this.http.post(this.apiUrl2, data, { headers });
+    return this.http.post<any[]>(`${this.apiUrl2}/roles`, { headers });
   }
 
   updateRoles(id: number, data: any): Observable<any> {
@@ -32,7 +35,7 @@ export class RolesService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.patch(`${this.apiUrl}/${id}`, data, { headers });
+    return this.http.patch(`${this.apiUrl2}/roles/${id}`, data, { headers });
   }
 
   getRolById(id: number): Observable<any> {
@@ -41,6 +44,6 @@ export class RolesService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<any>(`${this.apiUrl2}/roles/${id}`, { headers });
   }
 }
