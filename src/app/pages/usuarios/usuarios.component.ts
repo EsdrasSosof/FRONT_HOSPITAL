@@ -15,6 +15,7 @@ export class UsuariosComponent {
   ngOnInit() {
     this.usuariosService.getMedicines().subscribe(data => {
       this.usuarios = data;
+      console.log(data);
     });
   }
 

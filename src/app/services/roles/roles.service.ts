@@ -26,7 +26,7 @@ export class RolesService {
 
     // Realiza la solicitud POST enviando los datos y encabezados
     // return this.http.post(this.apiUrl2, data, { headers });
-    return this.http.post<any[]>(`${this.apiUrl2}/roles`, { headers });
+    return this.http.post<any[]>(`${this.apiUrl2}/roles`,data, { headers });
   }
 
   updateRoles(id: number, data: any): Observable<any> {

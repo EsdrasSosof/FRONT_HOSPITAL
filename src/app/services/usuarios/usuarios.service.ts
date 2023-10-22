@@ -27,7 +27,7 @@ export class UsuariosService {
 
     // Realiza la solicitud POST enviando los datos y encabezados
     // return this.http.post(this.apiUrl, data, { headers });
-    return this.http.post<any[]>(`${this.apiUrl2}/users`, { headers });
+    return this.http.post<any[]>(`${this.apiUrl2}/users`, data, { headers });
   }
 
   updateUser(id: number, data: any): Observable<any> {
